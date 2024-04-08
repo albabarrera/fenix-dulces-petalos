@@ -1,19 +1,28 @@
-#root {
-
-}
-
-
 .cardsList {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 0;
 }
 
 .card {
   list-style-type: none;
 
-  padding: 2em;
-  border: 1px solid black;
+  width: 20%;
+  min-width: 300px;
 
-  &:not(:last-child) {
-    margin-right: 20px;;
-  }
+  padding: 1em;
+  border: 1px solid black;
+}
+
+.imageWrapper {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.image {
+  min-width: 100%;
+  min-height: 100%;
 }
