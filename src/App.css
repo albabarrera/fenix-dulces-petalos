@@ -1,0 +1,19 @@
+#root {
+
+}
+
+
+.cardsList {
+  display: flex;
+}
+
+.card {
+  list-style-type: none;
+
+  padding: 2em;
+  border: 1px solid black;
+
+  &:not(:last-child) {
+    margin-right: 20px;;
+  }
+}
