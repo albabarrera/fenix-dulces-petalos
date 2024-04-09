@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 
 import "./App.css";
-import { Modal } from "./components/Modal";
+//import { Modal } from "./components/Modal";
+import Product from "./routes/product";
 
 export interface Data {
   id: string;
@@ -14,7 +15,7 @@ export interface Data {
   heightInCm: number;
 }
 
-const App: React.FC = () => {
+export const App: React.FC = () => {
   const [isModalActive, setIsModalActive] = useState(false);
   const [productData, setProductData] = useState<Data | null>(null);
   const [data, setData] = useState<Data[] | null>(null);
@@ -45,15 +46,17 @@ const App: React.FC = () => {
     <>
       <main>
         {isModalActive && productData && (
-          <Modal
+          <Product />
+          /* <Modal
             onClose={() => {
               setIsModalActive(false);
               setProductData(null);
             }}
             content={productData}
-          />
+          /> */
         )}
         <h1>Dulces Pétalos</h1>
+
         <div>
           <ul className="cardsList">
             {data ? (
@@ -67,10 +70,12 @@ const App: React.FC = () => {
                       setProductData(product);
                     }}
                   >
+                    <a href={`/product/${product.name}`}>
                     <div className="imageWrapper">
                       <img className="image" src={product.imgUrl} />
                     </div>
                     <h2>{product.name}</h2>
+                    </a>
                   </li>
                 </>
               ))
@@ -83,5 +88,3 @@ const App: React.FC = () => {
     </>
   );
 };
-
-export default App;
