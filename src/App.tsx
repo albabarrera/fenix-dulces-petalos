@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 
 import "./App.css";
-//import { Modal } from "./components/Modal";
-import Product from "./routes/product";
+
+import { Link } from "react-router-dom";
 
 export interface Data {
   id: string;
@@ -16,8 +16,6 @@ export interface Data {
 }
 
 export const App: React.FC = () => {
-  const [isModalActive, setIsModalActive] = useState(false);
-  const [productData, setProductData] = useState<Data | null>(null);
   const [data, setData] = useState<Data[] | null>(null);
 
   useEffect(() => {
@@ -45,37 +43,20 @@ export const App: React.FC = () => {
   return (
     <>
       <main>
-        {isModalActive && productData && (
-          <Product />
-          /* <Modal
-            onClose={() => {
-              setIsModalActive(false);
-              setProductData(null);
-            }}
-            content={productData}
-          /> */
-        )}
-        <h1>Dulces Pétalos</h1>
-
-        <div>
-          <ul className="cardsList">
+      <ul className="cardsList">
             {data ? (
               data.map((product: Data) => (
                 <>
                   <li
                     key={product.id}
                     className="card"
-                    onClick={() => {
-                      setIsModalActive(true);
-                      setProductData(product);
-                    }}
                   >
-                    <a href={`/product/${product.name}`}>
+                    <Link to={`/product/${product.name.replace(/\s/g, '-')}`} state={{product}}>
                     <div className="imageWrapper">
                       <img className="image" src={product.imgUrl} />
                     </div>
                     <h2>{product.name}</h2>
-                    </a>
+                    </Link>
                   </li>
                 </>
               ))
@@ -83,7 +64,7 @@ export const App: React.FC = () => {
               <p>Cargando datos...</p>
             )}
           </ul>
-        </div>
+
       </main>
     </>
   );

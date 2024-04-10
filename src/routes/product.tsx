@@ -1,6 +1,9 @@
+import { useLocation } from "react-router";
+import { Modal } from "../components/Modal";
+
 export default function Product() {
-  
-    return (
-      <h1>Hello world! I'm a product</h1>
-    );
-  }
+  const location = useLocation();
+  const { product } = location.state;
+
+  return <Modal content={product} />;
+}

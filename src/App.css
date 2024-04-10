@@ -1,7 +1,10 @@
 .cardsList {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+
+  margin-right: 40px;
+  margin-left: 40px;
+
   gap: 40px;
   padding: 0;
 }

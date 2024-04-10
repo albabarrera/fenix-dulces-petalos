@@ -1,9 +1,12 @@
-import { App } from '../App'
+import { App } from "../App";
 
 export default function Root() {
-    return (
-      <>
-        <App />
-      </>
-    );
-  }
+  return (
+    <>
+      <header className="header">
+        <h1>🌷 Dulces Pétalos</h1>
+      </header>
+      <App />
+    </>
+  );
+}
