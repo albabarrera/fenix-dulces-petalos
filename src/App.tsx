@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 
 import { ProductContent } from "./domain/product";
 import { Route, Routes } from "react-router-dom";
-import { HomeView } from "./ui/views/HomeView/HomeView";
-import { ProductView } from "./ui/views/ProductView";
+import { Home } from "./ui/views/Home";
+import { Product } from "./ui/views/Product";
 import { Header } from "./ui/components/Header";
 
 export const App: React.FC = () => {
@@ -35,10 +35,9 @@ export const App: React.FC = () => {
     <>
       <Header />
       <Routes>
-        <Route path="/" element={data &&  <HomeView data={data} />} />
-        <Route path="/product/:name" element={<ProductView />} />
+        <Route path="/" element={data &&  <Home data={data} />} />
+        <Route path="/product/:name" element={<Product />} />
       </Routes>
-      {/*  */}
     </>
   );
 };

@@ -3,13 +3,13 @@ import { Search } from "../../components/Search";
 import { ProductContent } from "../../../domain/product";
 import { Item } from "../../components/Item";
 import { Loader } from "../../components/Loader";
-import './HomeView.css';
+import './Home.css';
 
 interface Props {
     data: ProductContent[];
 }
 
-export const HomeView:React.FC<Props>= ({ data }) => {
+export const Home:React.FC<Props>= ({ data }) => {
     const [search, setSearch] = useState<string>('');
   
     const handleSearchChange = (value: string) => {

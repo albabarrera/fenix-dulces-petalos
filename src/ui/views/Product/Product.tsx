@@ -1,11 +1,11 @@
 import React from "react";
 
-import "./ProductView.css";
+import "./Product.css";
 import { Link, useLocation } from "react-router-dom";
 import { Image } from "../../components/Image";
 import { Description } from "../../components/Description/Description";
 
-export const ProductView: React.FC = () => {
+export const Product: React.FC = () => {
   const location = useLocation();
   const { product } = location.state;
 
