@@ -11,7 +11,7 @@ export const Description:React.FC<Props> = ({ product }) => {
         <div>
         <div className="mainInfo">
           <div className="titlesWrapper">
-            <h2>{product.name}</h2>
+            <h1>{product.name}</h1>
             <p>{product.binomialName}</p>
           </div>
           <p className="currency">{product.price}</p>

@@ -1,3 +1,7 @@
+.homeTitle {
+  display: none;
+}
+
 .cardsList {
   display: flex;
   flex-wrap: wrap;

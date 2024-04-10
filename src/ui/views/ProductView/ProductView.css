@@ -1,12 +1,3 @@
-.closeButton {
-  border: none;
-  background-color: transparent;
-
-  &:hover {
-    cursor: pointer;
-  }
-}
-
 @keyframes from-bottom-appear {
   to {
     top: 0;

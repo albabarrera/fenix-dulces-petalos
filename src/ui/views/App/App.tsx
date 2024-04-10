@@ -33,6 +33,7 @@ export const App: React.FC = () => {
   return (
     <>
       <main>
+        <h1 className="homeTitle">Home</h1>
         <ul className="cardsList">
           {data ? (
             data.map((product: ProductContent) => <Item key={product.id} product={product} />)
