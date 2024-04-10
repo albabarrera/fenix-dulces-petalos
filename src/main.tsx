@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
+import "./styles/index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./routes/root.tsx";
-import ErrorPage from "./error-page.tsx";
+import ErrorPage from "./views/error-page.tsx";
 import Product from "./routes/product.tsx";
+import { Header } from "./components/Header/Header.tsx";
 
 const router = createBrowserRouter([
   {
@@ -16,9 +17,7 @@ const router = createBrowserRouter([
     path: "product/:name",
     element: (
       <>
-        <header className="header">
-          <h1>🌷 Dulces Pétalos</h1>
-        </header>
+        <Header />
         <Product />
       </>
     ),

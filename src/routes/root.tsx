@@ -1,11 +1,10 @@
-import { App } from "../App";
+import { Header } from "../components/Header";
+import { App } from "../views/App";
 
 export default function Root() {
   return (
     <>
-      <header className="header">
-        <h1>🌷 Dulces Pétalos</h1>
-      </header>
+      <Header />
       <App />
     </>
   );

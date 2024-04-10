@@ -1,9 +1,9 @@
 import { useLocation } from "react-router";
-import { Modal } from "../components/Modal";
+import { ProductView } from "../views/ProductView";
 
 export default function Product() {
   const location = useLocation();
   const { product } = location.state;
 
-  return <Modal content={product} />;
+  return <ProductView content={product} />;
 }

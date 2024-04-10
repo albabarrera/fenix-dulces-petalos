@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import "./App.css";
 
-import { Link } from "react-router-dom";
+import { Item } from "../../components/Item";
 
 export interface Data {
   id: string;
@@ -43,28 +43,13 @@ export const App: React.FC = () => {
   return (
     <>
       <main>
-      <ul className="cardsList">
-            {data ? (
-              data.map((product: Data) => (
-                <>
-                  <li
-                    key={product.id}
-                    className="card"
-                  >
-                    <Link to={`/product/${product.name.replace(/\s/g, '-')}`} state={{product}}>
-                    <div className="imageWrapper">
-                      <img className="image" src={product.imgUrl} />
-                    </div>
-                    <h2>{product.name}</h2>
-                    </Link>
-                  </li>
-                </>
-              ))
-            ) : (
-              <p>Cargando datos...</p>
-            )}
-          </ul>
-
+        <ul className="cardsList">
+          {data ? (
+            data.map((product: Data) => <Item key={product.id} product={product} />)
+          ) : (
+            <p>Cargando datos...</p>
+          )}
+        </ul>
       </main>
     </>
   );

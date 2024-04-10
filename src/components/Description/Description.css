@@ -1,0 +1,35 @@
+.detailWrapper {
+    display: flex;
+  
+    p {
+      &:first-child {
+        margin-right: 4px;
+  
+        &::after {
+          content: ':'
+        }
+      }
+    }
+  }
+  
+  .mainInfo {
+    display: flex;
+    justify-content: space-between;
+    font-size: 30px;
+  }
+  
+  .titlesWrapper {
+    margin-bottom: 30px;
+  }
+  
+  .currency {
+    &::after {
+      content: '€'
+    }
+  }
+  
+  .lenghtUnit {
+    &::after {
+      content: 'cm'
+    }
+  }
