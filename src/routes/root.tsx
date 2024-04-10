@@ -1,5 +1,5 @@
-import { Header } from "../components/Header";
-import { App } from "../views/App";
+import { Header } from "../ui/components/Header";
+import { App } from "../ui/views/App";
 
 export default function Root() {
   return (

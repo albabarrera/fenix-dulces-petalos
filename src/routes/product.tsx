@@ -1,5 +1,5 @@
 import { useLocation } from "react-router";
-import { ProductView } from "../views/ProductView";
+import { ProductView } from "../ui/views/ProductView";
 
 export default function Product() {
   const location = useLocation();

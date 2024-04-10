@@ -1,13 +1,13 @@
 import React, { PropsWithChildren } from "react";
 
 import "./ProductView.css";
-import { Data } from "../App/App";
 import { Link } from "react-router-dom";
 import { Image } from "../../components/Image"
 import { Description } from "../../components/Description/Description";
+import { ProductContent } from "../../../domain/product";
 
 interface Props {
-  content: Data;
+  content: ProductContent;
 }
 
 export const ProductView: React.FC<PropsWithChildren<Props>> = ({ content }) => {

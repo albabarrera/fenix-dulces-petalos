@@ -1,9 +1,9 @@
 import React from "react";
-import { Data } from "../../views/App/App";
 import './Description.css';
+import { ProductContent } from "../../../domain/product";
 
 interface Props {
-    product: Data;
+    product: ProductContent;
 }
 
 export const Description:React.FC<Props> = ({ product }) => {

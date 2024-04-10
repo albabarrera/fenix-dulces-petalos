@@ -3,20 +3,10 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 
 import { Item } from "../../components/Item";
-
-export interface Data {
-  id: string;
-  name: string;
-  binomialName: string;
-  price: number;
-  imgUrl: string;
-  wateringsPerWeek: number;
-  fertilizerType: string;
-  heightInCm: number;
-}
+import { ProductContent } from "../../../domain/product";
 
 export const App: React.FC = () => {
-  const [data, setData] = useState<Data[] | null>(null);
+  const [data, setData] = useState<ProductContent[] | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -45,7 +35,7 @@ export const App: React.FC = () => {
       <main>
         <ul className="cardsList">
           {data ? (
-            data.map((product: Data) => <Item key={product.id} product={product} />)
+            data.map((product: ProductContent) => <Item key={product.id} product={product} />)
           ) : (
             <p>Cargando datos...</p>
           )}

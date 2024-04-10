@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Data } from "../../views/App/App";
-import { Image } from "../../components/Image"
+import { Image } from "../Image"
 import './Item.css';
+import { ProductContent } from "../../../domain/product";
 
 interface Props {
-  product: Data;
+  product: ProductContent;
 }
 
 export const Item: React.FC<Props> = ({ product }) => {
