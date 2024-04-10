@@ -4,6 +4,7 @@ import "./App.css";
 
 import { Item } from "../../components/Item";
 import { ProductContent } from "../../../domain/product";
+import { Loader } from "../../components/Loader";
 
 export const App: React.FC = () => {
   const [data, setData] = useState<ProductContent[] | null>(null);
@@ -38,7 +39,7 @@ export const App: React.FC = () => {
           {data ? (
             data.map((product: ProductContent) => <Item key={product.id} product={product} />)
           ) : (
-            <p>Cargando datos...</p>
+            <Loader />
           )}
         </ul>
       </main>
