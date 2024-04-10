@@ -5,9 +5,27 @@ import "./App.css";
 import { Item } from "../../components/Item";
 import { ProductContent } from "../../../domain/product";
 import { Loader } from "../../components/Loader";
+import { Search } from "../../components/Search";
 
 export const App: React.FC = () => {
   const [data, setData] = useState<ProductContent[] | null>(null);
+  const [search, setSearch] = useState<string>('');
+
+  const handleSearchChange = (value: string) => {
+    setSearch(value);
+  };
+
+  const filteredProducts = data?.filter(product => {
+    if(search === '') {
+      return true;
+    }
+
+    const normalizeString = (string: string) => {
+      return string.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+  }
+    
+    return normalizeString(product.name).includes(normalizeString(search))
+  })
 
   useEffect(() => {
     const fetchData = async () => {
@@ -35,9 +53,10 @@ export const App: React.FC = () => {
     <>
       <main>
         <h1 className="homeTitle">Home</h1>
+        <Search onChange={handleSearchChange} />
         <ul className="cardsList">
-          {data ? (
-            data.map((product: ProductContent) => <Item key={product.id} product={product} />)
+          {data && filteredProducts ? (
+            filteredProducts.map((product: ProductContent) => <Item key={product.id} product={product} />)
           ) : (
             <Loader />
           )}
