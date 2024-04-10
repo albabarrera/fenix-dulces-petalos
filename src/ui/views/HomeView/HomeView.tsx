@@ -3,6 +3,7 @@ import { Search } from "../../components/Search";
 import { ProductContent } from "../../../domain/product";
 import { Item } from "../../components/Item";
 import { Loader } from "../../components/Loader";
+import './HomeView.css';
 
 interface Props {
     data: ProductContent[];

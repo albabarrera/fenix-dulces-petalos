@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-import "./App.css";
-
-import { ProductContent } from "../domain/product";
+import { ProductContent } from "./domain/product";
 import { Route, Routes } from "react-router-dom";
-import { HomeView } from "../ui/views/HomeView/HomeView";
-import { ProductView } from "../ui/views/ProductView";
-import { Header } from "../ui/components/Header";
+import { HomeView } from "./ui/views/HomeView/HomeView";
+import { ProductView } from "./ui/views/ProductView";
+import { Header } from "./ui/components/Header";
 
 export const App: React.FC = () => {
   const [data, setData] = useState<ProductContent[] | null>(null);

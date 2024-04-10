@@ -1,0 +1,14 @@
+.homeTitle {
+    display: none;
+  }
+  
+  .cardsList {
+    display: flex;
+    flex-wrap: wrap;
+  
+    margin-right: 40px;
+    margin-left: 40px;
+  
+    gap: 40px;
+    padding: 0;
+  }
