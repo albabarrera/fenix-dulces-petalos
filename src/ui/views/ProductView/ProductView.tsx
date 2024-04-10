@@ -13,17 +13,15 @@ interface Props {
 export const ProductView: React.FC<PropsWithChildren<Props>> = ({ content }) => {
   return (
     <div className="wrapper">
-      <div className="headerWrapper">
+      <div className="homeLinkWrapper">
         <Link className="homeLink" to="/">
           Volver a la home
         </Link>
       </div>
-      <div className="containerWrapper">
         <div className="container">
         <Image alt={content.name} src={content.imgUrl} />
         <Description product={content} />
         </div>
       </div>
-    </div>
   );
 };
