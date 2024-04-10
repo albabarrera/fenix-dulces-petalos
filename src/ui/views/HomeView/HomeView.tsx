@@ -25,7 +25,7 @@ export const HomeView:React.FC<Props>= ({ data }) => {
         return string.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
     }
       
-      return normalizeString(product.name).includes(normalizeString(search))
+      return normalizeString(product.name).includes(normalizeString(search)) || normalizeString(product.binomialName).includes(normalizeString(search))
     })
 
     return (
