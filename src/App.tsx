@@ -31,15 +31,12 @@ export const App: React.FC = () => {
     fetchData();
   }, []);
 
-  const Home = () => data && <HomeView data={data} />;
-  const Product = () => <ProductView />;
-
   return (
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/product/:name" element={<Product />} />
+        <Route path="/" element={data &&  <HomeView data={data} />} />
+        <Route path="/product/:name" element={<ProductView />} />
       </Routes>
       {/*  */}
     </>
