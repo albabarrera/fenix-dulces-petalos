@@ -30,7 +30,7 @@ export const HomeView:React.FC<Props>= ({ data }) => {
 
     return (
         <main>
-        <h1 className="homeTitle">Home</h1>
+        <h1 className="visually-hidden">Home</h1>
         <Search onChange={handleSearchChange} />
         <ul className="cardsList">
           {data && filteredProducts ? (
