@@ -1,0 +1,9 @@
+.card {
+    list-style-type: none;
+  
+    width: 20%;
+    min-width: 300px;
+  
+    padding: 1em;
+    border: 1px solid black;
+  }

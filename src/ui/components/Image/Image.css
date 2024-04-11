@@ -1,0 +1,10 @@
+.imageWrapper {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+  }
+  
+  .image {
+    width: 100%;
+    min-height: 100%;
+  }
