@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import { Home } from "./ui/views/Home";
 import { Product } from "./ui/views/Product";
 import { Header } from "./ui/components/Header";
+import { Loader } from "./ui/components/Loader";
 
 export const App: React.FC = () => {
   const [data, setData] = useState<ProductContent[] | null>(null);
@@ -35,7 +36,7 @@ export const App: React.FC = () => {
     <>
       <Header />
       <Routes>
-        <Route path="/" element={data &&  <Home data={data} />} />
+        <Route path="/" element={data ? <Home data={data} /> : <Loader />} />
         <Route path="/product/:name" element={<Product />} />
       </Routes>
     </>

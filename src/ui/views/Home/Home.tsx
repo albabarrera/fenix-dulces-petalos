@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Search } from "../../components/Search";
 import { ProductContent } from "../../../domain/product";
 import { Item } from "../../components/Item";
-import { Loader } from "../../components/Loader";
 import './Home.css';
 
 interface Props {
@@ -33,10 +32,8 @@ export const Home:React.FC<Props>= ({ data }) => {
         <h1 className="visually-hidden">Home</h1>
         <Search onChange={handleSearchChange} />
         <ul className="cardsList">
-          {data && filteredProducts ? (
+          {data && filteredProducts && (
             filteredProducts.map((product: ProductContent) => <Item key={product.id} product={product} />)
-          ) : (
-            <Loader />
           )}
         </ul>
       </main>
