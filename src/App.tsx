@@ -6,7 +6,7 @@ import { Home } from "./ui/views/Home";
 import { Product } from "./ui/views/Product";
 import { Header } from "./ui/components/Header";
 import { Loader } from "./ui/components/Loader";
-import { productResponse } from "./domain/services/productResponse";
+import { getProducts } from "./domain/services/getProducts";
 
 export const App: React.FC = () => {
   const [data, setData] = useState<ProductContent[] | null>(null);
@@ -14,14 +14,12 @@ export const App: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await productResponse();
+        const response = await getProducts();
 
         if (response.ok) {
           const jsonData = await response.json();
 
           setData(jsonData);
-        } else {
-          console.error("Error al obtener los datos:", response.statusText);
         }
       } catch (error) {
         console.error("Error en la llamada a la API:", error);

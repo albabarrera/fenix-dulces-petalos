@@ -1,11 +1,11 @@
 import '../product';
 import { ProductContent } from '../product';
 
-export function productBuilder() {
+export function aProduct() {
     const defaults: ProductContent[] = [{
             "id": "qSyO-2wbasdfdrb2waew",
-            "name": "Girasol",
-            "binomialName": "Heliantus annuus",
+            "name": "anIrrelevantName",
+            "binomialName": "anIrrelevantBinomialName",
             "price": 5.25,
             "imgUrl": "https://dulces-petalos.herokuapp.com/images/helianthusAnnuus.jpeg",
             "wateringsPerWeek": 1,

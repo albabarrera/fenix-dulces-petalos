@@ -1,11 +1,11 @@
 import { render, screen } from "@testing-library/react";
 import { Home } from "./Home";
 import { MemoryRouter } from "react-router-dom";
-import { productBuilder } from "@/domain/models/__builders__/productBuilder";
+import { aProduct } from "@/domain/models/__builders__/aProduct";
 
 describe("Home", () => {
     it("shows searchBar", async () => {
-        const data = productBuilder()
+        const data = aProduct()
 
         render(<MemoryRouter><Home data={data}/></MemoryRouter>);
         
