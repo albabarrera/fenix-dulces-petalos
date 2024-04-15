@@ -1,16 +1,10 @@
 import 'whatwg-fetch';
-import "@testing-library/jest-dom";
+import '@testing-library/jest-dom';
+import { server } from './src/test/mocks/server';
 
-export default {
-    testEnvironment: "jsdom",
-    transform: {
-      "^.+\\.tsx?$": "ts-jest",
-    },
-  
-    moduleNameMapper: {
-      "\\.(css|less|sass|scss)$": "identity-obj-proxy",
-      "^.+\\.svg$": "jest-transformer-svg",
-    },
-  
-    setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
-  };
+
+
+beforeAll(() => server.listen({onUnhandledRequest: 'error'}))
+afterAll(() => server.close())
+afterEach(() => server.resetHandlers())
+
