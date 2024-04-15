@@ -1,6 +1,6 @@
 import React from "react";
 import './Description.css';
-import { ProductContent } from "../../../domain/product";
+import { ProductContent } from "../../../domain/models/product";
 
 interface Props {
     product: ProductContent;

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Image } from "../Image"
 import './Item.css';
-import { ProductContent } from "../../../domain/product";
+import { ProductContent } from "../../../domain/models/product";
 
 interface Props {
   product: ProductContent;

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 
-import { ProductContent } from "./domain/product";
+import { ProductContent } from "./domain/models/product";
 import { Route, Routes } from "react-router-dom";
 import { Home } from "./ui/views/Home";
 import { Product } from "./ui/views/Product";
 import { Header } from "./ui/components/Header";
 import { Loader } from "./ui/components/Loader";
+import { productResponse } from "./domain/services/productResponse";
 
 export const App: React.FC = () => {
   const [data, setData] = useState<ProductContent[] | null>(null);
@@ -13,9 +14,7 @@ export const App: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          "https://dulces-petalos.herokuapp.com/api/product"
-        );
+        const response = await productResponse();
 
         if (response.ok) {
           const jsonData = await response.json();
