@@ -16,7 +16,13 @@ export const Item: React.FC<Props> = ({ product }) => {
         state={{ product }}
       >
         <Image alt={product.name} src={product.imgUrl} />
-        <h2>{product.name}</h2>
+        <div className="itemContentWrapper">
+              <h2 className="itemTitle">{product.name}</h2>
+            <div className="itemDetails">
+              <p className="itemSubtitle">{product.binomialName}</p>
+            <p className="itemCurrency">{product.price}</p>
+            </div>
+        </div>
       </Link>
     </li>
   );
