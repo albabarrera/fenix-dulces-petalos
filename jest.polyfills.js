@@ -1,3 +1,7 @@
+/* eslint-disable no-undef */
+/* eslint-disable @typescript-eslint/no-var-requires */
+
+
 // jest.polyfills.js
 /**
  * @note The block below contains polyfills for Node.js globals
@@ -29,3 +33,4 @@ Object.defineProperties(globalThis, {
   Request: { value: Request },
   Response: { value: Response },
 })
+

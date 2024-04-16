@@ -1,12 +1,13 @@
+/* eslint-disable no-undef */
 export default {
-    testEnvironment: "jsdom",
-
+  testEnvironment: 'jsdom',
     testEnvironmentOptions: {
       customExportConditions: [''],
     },
     transform: {
       "^.+\\.tsx?$": "ts-jest",
     },
+    moduleDirectories: ['node_modules'],
 
     moduleNameMapper: {
         "\\.(css|less|sass|scss)$": "identity-obj-proxy",
@@ -18,4 +19,8 @@ export default {
 
     setupFiles: ['./jest.polyfills.js'],
 
+    modulePathIgnorePatterns: ['<rootDir>/.*/__mocks__'],
+
+
   };
+
