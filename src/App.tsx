@@ -11,7 +11,7 @@ export const App: React.FC = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/product/:name" element={<Product />} />
+        <Route path="/product/:id" element={<Product />} />
       </Routes>
     </>
   );

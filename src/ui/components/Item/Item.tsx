@@ -12,7 +12,7 @@ export const Item: React.FC<Props> = ({ product }) => {
   return (
     <li className="card">
       <Link
-        to={`/product/${product.name.replace(/\s/g, "-")}`}
+        to={`/product/${product.id}`}
         state={{ product }}
       >
         <Image alt={product.name} src={product.imgUrl} />
