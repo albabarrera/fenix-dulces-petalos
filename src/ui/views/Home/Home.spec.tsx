@@ -1,15 +1,13 @@
 import { render, screen } from "@testing-library/react";
 import { Home } from "./Home";
 import { MemoryRouter } from "react-router-dom";
-import { aProduct } from "@/domain/models/__builders__/aProduct";
 
 describe("Home", () => {
-    it("shows searchBar", async () => {
-        const data = aProduct()
+    it("api success scenario on load", async () => {
 
-        render(<MemoryRouter><Home data={data}/></MemoryRouter>);
+        render(<MemoryRouter><Home /></MemoryRouter>);
         
-        expect(screen.getByLabelText(/Qué planta estás buscando/i)).toBeInTheDocument();
+        expect(await screen.findByRole("heading", { name: /anIrrelevantName/i})).toBeInTheDocument(); 
         
     })
 })
