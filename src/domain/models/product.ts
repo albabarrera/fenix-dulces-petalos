@@ -5,6 +5,6 @@ export interface ProductContent {
     price: number;
     imgUrl: string;
     wateringsPerWeek: number;
-    fertilizerType: string;
+    fertilizerType: 'nitrogen' | 'phosphorus';
     heightInCm: number;
   }

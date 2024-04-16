@@ -22,7 +22,7 @@ export const Description:React.FC<Props> = ({ product }) => {
         </div>
         <div className="detailWrapper">
           <p>Fertilizante</p>
-          <p>{product.fertilizerType}</p>
+          <p>{(product.fertilizerType === 'nitrogen' ? 'nitrogenado' : 'fosforado')}</p>
         </div>
         <div className="detailWrapper">
           <p>Altura</p>
