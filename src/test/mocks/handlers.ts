@@ -6,10 +6,20 @@ export const handlers = [
     return HttpResponse.json(products, { status: 200 });
   }),
   http.get("/api/product/:id", () => {
-    const product = products.find((product) => {
+    /* const product = products.find((product) => {
       return location.pathname.includes(product.id);
     });
-    return HttpResponse.json(product, { status: 200 });
+    return HttpResponse.json(product, { status: 200 }); */
+    return HttpResponse.json({
+      "id": "ZmGrkLRPXOTpxsU4jjAcv",
+      "name": "Orquídea",
+      "binomialName": "Ophrys tenthredinifera",
+      "price": 4.95,
+      "imgUrl": "https://dulces-petalos.herokuapp.com/images/ophrysTenthredinifera.jpeg",
+      "wateringsPerWeek": 1,
+      "fertilizerType": "phosphorus",
+      "heightInCm": 30
+  }, { status: 200 });
   }),
 ];
 

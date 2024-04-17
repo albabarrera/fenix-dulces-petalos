@@ -2,7 +2,7 @@ import '../product';
 import { ProductContent } from '../product';
 
 export function aProduct() {
-    const defaults: ProductContent[] = [{
+    const defaults: ProductContent = {
             "id": "qSyO-2wbasdfdrb2waew",
             "name": "anIrrelevantName",
             "binomialName": "anIrrelevantBinomialName",
@@ -12,6 +12,6 @@ export function aProduct() {
             "fertilizerType": "phosphorus",
             "heightInCm": 70
         
-    }]
+    }
     return defaults;
 }
