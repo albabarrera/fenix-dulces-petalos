@@ -1,15 +1,10 @@
-jest.mock('@/domain/services/getProduct')
-
 import { App } from "@/App";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event"
 import { MemoryRouter } from "react-router-dom";
 import { Home } from "./Home";
-import * as floresService from '@/domain/services/getProduct';
-
-const serviceResponse = fetch(
-    "http://localhost:5173/product/ZmGrkLRPXOTpxsU4jjAcv"
-  );
+import * as floresService from '@/domain/services/getFlor';
+import { getFlor } from "@/domain/services/getFlor";
 
 
 describe("Home", () => {
@@ -28,21 +23,15 @@ describe("Home", () => {
         expect(await screen.findByRole("link", { name: /Volver a la home/i})).toBeInTheDocument(); 
     })
 
-    //Cambiar nombre test
     it("navegates to product detail view and shows product info", async () => {
-        jest
-            .spyOn(floresService, 'getProduct')
-            .mockReturnValue(serviceResponse)
-            
+        jest.spyOn(floresService, 'getFlor');
+        getFlor("ND1elEt4nqZrCeFflDUZ2");
+
         render(<MemoryRouter><App /></MemoryRouter>);
-        
         const item = await screen.findByRole("link", { name: /Orquídea/i})   
-         
         userEvent.click(item);
 
         expect(await screen.findByRole("link", { name: /Volver a la home/i})).toBeInTheDocument(); 
-
-        
         expect(await screen.findByRole("heading", { name: /Orquídea/i})).toBeInTheDocument(); 
     })
 })
