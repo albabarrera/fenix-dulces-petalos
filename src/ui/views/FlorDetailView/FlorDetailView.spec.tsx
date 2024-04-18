@@ -1,13 +1,13 @@
 import { MemoryRouter, useLocation } from "react-router-dom";
-import { Product } from "./Product";
+import { FlorDetailView } from "./FlorDetailView";
 import { render, renderHook, screen } from "@testing-library/react";
 import { FC } from "react";
 
-describe("Product", () => {
+describe("FlorDetailView", () => {
     it.skip("shows product information", async () => {
         const product = "http://localhost:5173/product/ZmGrkLRPXOTpxsU4jjAcv"
         
-        render(<MemoryRouter initialEntries={[product]}><Product /></MemoryRouter>);
+        render(<MemoryRouter initialEntries={[product]}><FlorDetailView /></MemoryRouter>);
         
         expect(await screen.findByRole("link", { name: /Volver a la home/i})).toBeInTheDocument(); 
     })
@@ -15,7 +15,7 @@ describe("Product", () => {
 
         const wrapper: FC = () => (
           <MemoryRouter initialEntries={[`/product/ZmGrkLRPXOTpxsU4jjAcv`]}>
-            <Product />
+            <FlorDetailView />
           </MemoryRouter>
         );
         

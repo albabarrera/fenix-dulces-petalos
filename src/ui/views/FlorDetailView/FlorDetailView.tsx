@@ -1,23 +1,23 @@
 import React, { useEffect, useState } from "react";
 
-import "./Product.css";
+import "./FlorDetailView.css";
 import { Link, useLocation } from "react-router-dom";
 import { Image } from "../../components/Image";
 import { Description } from "../../components/Description/Description";
-import { ProductContent } from "@/domain/models/product";
-import { getProduct } from "@/domain/services/getProduct";
+import { FlorContent } from "@/domain/models/flor";
+import { getFlor } from "@/domain/services/getFlor";
 
 
-export const Product: React.FC = () => {
+export const FlorDetailView: React.FC = () => {
   const location = useLocation();
-  const { product } = location.state;
-  const [data, setData] = useState<ProductContent | null>(null);
+  const { flor } = location.state;
+  const [data, setData] = useState<FlorContent | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
         try {
 
-          const response = await getProduct(product.id);
+          const response = await getFlor(flor.id);
           
         if (response.ok) {
           const jsonData = await response.json();
@@ -30,7 +30,7 @@ export const Product: React.FC = () => {
     };
 
     fetchData();
-  }, [product.id]);
+  }, [flor.id]);
 
   return (
     <div className="wrapper">
@@ -42,9 +42,11 @@ export const Product: React.FC = () => {
         {data && (
           <div className="container">
             <Image alt={data.name} src={data.imgUrl} />
-            <Description product={data} />
+            <Description flor={data} />
           </div>
         )}
     </div>
   );
 };
+
+

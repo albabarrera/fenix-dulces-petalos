@@ -2,7 +2,7 @@ import React from "react";
 
 import { Route, Routes } from "react-router-dom";
 import { Home } from "./ui/views/Home";
-import { Product } from "./ui/views/Product";
+import { FlorDetailView } from "./ui/views/FlorDetailView";
 import { Header } from "./ui/components/Header";
 
 export const App: React.FC = () => {
@@ -11,7 +11,7 @@ export const App: React.FC = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/product/:id" element={<Product />} />
+        <Route path="/product/:id" element={<FlorDetailView />} />
       </Routes>
     </>
   );

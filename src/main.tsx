@@ -10,7 +10,7 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
-async function enableMocking() {
+const enableMocking = async () => {
   if (process.env.NODE_ENV !== 'development') {
     return
   }
