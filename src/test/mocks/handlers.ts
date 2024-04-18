@@ -2,10 +2,10 @@ import { http, HttpResponse } from "msw";
 
 
 export const handlers = [
-  http.get("/api/product", () => {
+  http.get("https://dulces-petalos.herokuapp.com/api/product", () => {
     return HttpResponse.json(products, { status: 200 });
   }),
-  http.get("/api/product/:id", () => {
+  http.get("https://dulces-petalos.herokuapp.com/api/product/:id", () => {
     /* const product = products.find((product) => {
       return location.pathname.includes(product.id);
     });

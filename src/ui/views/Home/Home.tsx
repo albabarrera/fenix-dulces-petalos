@@ -33,16 +33,16 @@ export const Home:React.FC= () => {
 
     fetchData();
   }, []);
-  
+
     const filteredProducts = data?.filter((flor: FlorContent): boolean => {
       if(search === '') {
         return true;
       }
-  
+
       const normalizeString = (string: string): string => {
         return string.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
     }
-      
+
       return normalizeString(flor.name).includes(normalizeString(search)) || normalizeString(flor.binomialName).includes(normalizeString(search))
     })
 

@@ -1,5 +1,5 @@
 export const getFlores = async (): Promise<Response> => {
   return await fetch(
-    "/api/product"
+    "https://dulces-petalos.herokuapp.com/api/product"
   )
 }
