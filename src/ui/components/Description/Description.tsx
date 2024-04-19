@@ -1,32 +1,33 @@
 import React from "react";
 import './Description.css';
-import { ProductContent } from "../../../domain/product";
+import { FlorContent } from "../../../domain/models/flor";
+import { getFertilizanteName } from "@/domain/models/fertilizantes";
 
 interface Props {
-    product: ProductContent;
+    flor: FlorContent;
 }
 
-export const Description:React.FC<Props> = ({ product }) => {
+export const Description:React.FC<Props> = ({ flor }) => {
     return (
         <div>
         <div className="mainInfo">
           <div className="titlesWrapper">
-            <h1>{product.name}</h1>
-            <p>{product.binomialName}</p>
+            <h1>{flor.name}</h1>
+            <p>{flor.binomialName}</p>
           </div>
-          <p className="currency">{product.price}</p>
+          <p className="currency">{flor.price}</p>
         </div>
         <div className="detailWrapper">
           <p>Riegos por semana</p>
-          <p>{product.wateringsPerWeek}</p>
+          <p>{flor.wateringsPerWeek}</p>
         </div>
         <div className="detailWrapper">
           <p>Fertilizante</p>
-          <p>{product.fertilizerType}</p>
+          <p>{getFertilizanteName(flor.fertilizerType)}</p>
         </div>
         <div className="detailWrapper">
           <p>Altura</p>
-          <p className="lenghtUnit">{product.heightInCm}</p>
+          <p className="lenghtUnit">{flor.heightInCm}</p>
         </div>
       </div>
 

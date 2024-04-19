@@ -1,10 +1,12 @@
-export interface ProductContent {
+import { Fertilizantes } from "./fertilizantes";
+
+export interface FlorContent {
     id: string;
     name: string;
     binomialName: string;
     price: number;
     imgUrl: string;
     wateringsPerWeek: number;
-    fertilizerType: string;
+    fertilizerType: Fertilizantes;
     heightInCm: number;
   }

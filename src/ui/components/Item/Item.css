@@ -4,6 +4,37 @@
     width: 20%;
     min-width: 300px;
   
-    padding: 1em;
+    padding: 1.2em;
     border: 1px solid black;
+  }
+
+  .itemTitle {
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+
+    font-size: 1.4em;
+    font-weight: bold;
+    color: black;
+
+    border-bottom: 1px solid black;
+  }
+
+  .itemSubtitle {
+    font-style: italic;
+  }
+
+  .itemDetails {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .itemContentWrapper {
+    margin-top: 20px;
+    font-size: 1.2rem;
+  }
+
+  .itemCurrency {
+    &::after{
+      content: '€';
+    }
   }

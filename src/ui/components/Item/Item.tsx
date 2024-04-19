@@ -2,21 +2,27 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Image } from "../Image"
 import './Item.css';
-import { ProductContent } from "../../../domain/product";
+import { FlorContent } from "../../../domain/models/flor";
 
 interface Props {
-  product: ProductContent;
+  flor: FlorContent;
 }
 
-export const Item: React.FC<Props> = ({ product }) => {
+export const Item: React.FC<Props> = ({ flor }) => {
   return (
     <li className="card">
       <Link
-        to={`/product/${product.name.replace(/\s/g, "-")}`}
-        state={{ product }}
+        to={`/product/${flor.id}`}
+        state={{ flor }}
       >
-        <Image alt={product.name} src={product.imgUrl} />
-        <h2>{product.name}</h2>
+        <Image alt={flor.name} src={flor.imgUrl} />
+        <div className="itemContentWrapper">
+              <h2 className="itemTitle">{flor.name}</h2>
+            <div className="itemDetails">
+              <p className="itemSubtitle">{flor.binomialName}</p>
+            <p className="itemCurrency">{flor.price}</p>
+            </div>
+        </div>
       </Link>
     </li>
   );

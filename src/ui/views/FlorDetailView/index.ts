@@ -1,0 +1,1 @@
+export { FlorDetailView } from './FlorDetailView';
